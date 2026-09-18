@@ -21,7 +21,7 @@ public class spriteController : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W))
         {
             spriteRenderer.sprite = rightMovingSprite;
-            Debug.Log("chat are we listening?");
+            
         } 
         else
         {
@@ -34,7 +34,7 @@ public class spriteController : MonoBehaviour
         } 
         else
         {
-            spriteRenderer.sprite = standingSprite;
+            //spriteRenderer.sprite = standingSprite;
         }
 
     }

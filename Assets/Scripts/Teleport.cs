@@ -20,6 +20,7 @@ public class Teleport : MonoBehaviour
 
        if (distance <= warpDistance)
         {
+            Debug.Log("hello??");
             MoveHere();
         }
     }
