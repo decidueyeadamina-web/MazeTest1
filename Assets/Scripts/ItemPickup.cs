@@ -6,14 +6,17 @@ public class ItemPickup : MonoBehaviour
     public Transform Key;
     public GameObject DoorKey;
 
+    public GameObject thisKeyUI;
+
     public float closeEnough = 1f;
 
-    public bool keyCollected;
+    public bool thisKeyCollected;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        keyCollected = false;
+        thisKeyCollected = false;
+        thisKeyUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,17 +27,20 @@ public class ItemPickup : MonoBehaviour
         if (distance <= closeEnough)
         {
             ItemGrab();
-            keyCollected = true;
+            thisKeyCollected = true;
         }
 
-        if (keyCollected)
+        if (thisKeyCollected)
         {
             Debug.Log("UI for the collection should show up");
+
         }
     }
 
     void ItemGrab()
     {
         Destroy(DoorKey);
+        thisKeyUI.SetActive(true);
+
     }
 }
