@@ -7,7 +7,7 @@ public class Teleport : MonoBehaviour
     public Transform player;
     public Transform teleportA;
     public Transform teleportB;
-    private float warpDistance = 1.5f;
+    public float warpDistance = 5f;
     void Start()
     {
         

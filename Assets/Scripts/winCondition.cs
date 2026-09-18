@@ -24,10 +24,7 @@ public class winCondition : MonoBehaviour
 
     void YouWin()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("put words here!");
-            winUI.SetActive(true);
-        }
+        winUI.SetActive(true);
     }
 }
+
