@@ -24,4 +24,3 @@ public class MoveController : MonoBehaviour
     }
 }
 
-//ask about namespace for Space.self to be applicable in unity 6000.0.81f1?

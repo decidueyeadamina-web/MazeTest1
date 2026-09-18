@@ -24933,8 +24933,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingSprite: {fileID: 21300000, guid: 8aa912d856e3e472c809e7eef153e205, type: 3}
-  rightMovingSprite: {fileID: 21300000, guid: 2b4942c1bccd0473888543239e970883, type: 3}
-  leftMovingSprite: {fileID: 21300000, guid: 8a0c6da4bac5f4ab29c3370fe0466a23, type: 3}
+  rightMovingSprite: {fileID: 21300000, guid: 8a0c6da4bac5f4ab29c3370fe0466a23, type: 3}
+  leftMovingSprite: {fileID: 21300000, guid: 2b4942c1bccd0473888543239e970883, type: 3}
   castableSprite: {fileID: 21300000, guid: 45f293b7d59244b52824fe823c0d6eb4, type: 3}
 --- !u!212 &1394686319
 SpriteRenderer:
@@ -24979,7 +24979,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8aa912d856e3e472c809e7eef153e205, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
