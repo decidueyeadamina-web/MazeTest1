@@ -7,11 +7,26 @@ public class spriteController : MonoBehaviour
     public Sprite leftMovingSprite;
     public Sprite castableSprite;
     private SpriteRenderer spriteRenderer;
+
+    // transforms to sense casting
+    public Transform Player;
+    public Transform Teleport1;
+    public Transform Teleport2;
+    public Transform Teleport3;
+    public Transform Teleport4;
+    public Transform Teleport5;
+    public Transform Teleport6;
+
+    // floats for sense distance
+
+    public float canTeleport = 5f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>(); 
-    if (spriteRenderer.sprite == null) 
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer.sprite == null) 
         spriteRenderer.sprite = standingSprite; 
     }
 
@@ -35,6 +50,44 @@ public class spriteController : MonoBehaviour
         else
         {
             //spriteRenderer.sprite = standingSprite;
+        }
+
+        //teleport sprite turn on
+
+        float distance1A = Vector3.Distance(Player.position, Teleport1.position);
+
+        if (distance1A <= canTeleport)
+        {
+            spriteRenderer.sprite = castableSprite; 
+        }
+        else
+        {
+            spriteRenderer.sprite = standingSprite;
+        }
+
+        float distance2A = Vector3.Distance(Player.position, Teleport2.position);
+
+        if (distance2A <= canTeleport)
+        {
+            spriteRenderer.sprite = castableSprite; 
+        }
+        float distance3A = Vector3.Distance(Player.position, Teleport3.position);
+
+        if (distance3A <= canTeleport)
+        {
+            spriteRenderer.sprite = castableSprite; 
+        }
+        float distance4A = Vector3.Distance(Player.position, Teleport4.position);
+
+        if (distance4A <= canTeleport)
+        {
+            spriteRenderer.sprite = castableSprite; 
+        }
+        float distance5A = Vector3.Distance(Player.position, Teleport5.position);
+
+        if (distance5A <= canTeleport)
+        {
+            spriteRenderer.sprite = castableSprite; 
         }
 
     }
