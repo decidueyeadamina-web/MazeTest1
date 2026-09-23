@@ -8,9 +8,11 @@ public class Teleport : MonoBehaviour
     public Transform teleportA;
     public Transform teleportB;
     public float warpDistance = 5f;
+
+    public bool canWarp;
     void Start()
     {
-        
+        canWarp = false;
     }
 
     // Update is called once per frame
@@ -19,8 +21,9 @@ public class Teleport : MonoBehaviour
        float distance = Vector3.Distance(player.position, teleportA.position);
 
        if (distance <= warpDistance)
-        {
-            Debug.Log("hello??");
+        {   
+            canWarp = true;
+            //Debug.Log("hello??");
             MoveHere();
         }
     }

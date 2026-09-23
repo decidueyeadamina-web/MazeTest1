@@ -20,6 +20,9 @@ public class spriteController : MonoBehaviour
 
     public float canTeleport = 5f;
 
+    // bool script call test
+    public bool warpSpot;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +30,8 @@ public class spriteController : MonoBehaviour
 
         if (spriteRenderer.sprite == null) 
         spriteRenderer.sprite = standingSprite; 
+
+        warpSpot = false;
     }
 
     // Update is called once per frame
@@ -58,6 +63,7 @@ public class spriteController : MonoBehaviour
         if (distance1A <= canTeleport)
         {
             spriteRenderer.sprite = castableSprite; 
+            warpSpot = true;
         }
 
         float distance2A = Vector3.Distance(Player.position, Teleport2.position);
@@ -65,24 +71,28 @@ public class spriteController : MonoBehaviour
         if (distance2A <= canTeleport)
         {
             spriteRenderer.sprite = castableSprite; 
+            warpSpot = true;
         }
         float distance3A = Vector3.Distance(Player.position, Teleport3.position);
 
         if (distance3A <= canTeleport)
         {
             spriteRenderer.sprite = castableSprite; 
+            warpSpot = true;
         }
         float distance4A = Vector3.Distance(Player.position, Teleport4.position);
 
         if (distance4A <= canTeleport)
         {
-            spriteRenderer.sprite = castableSprite; 
+            spriteRenderer.sprite = castableSprite;
+            warpSpot = true; 
         }
         float distance5A = Vector3.Distance(Player.position, Teleport5.position);
 
         if (distance5A <= canTeleport)
         {
             spriteRenderer.sprite = castableSprite; 
+            warpSpot = true;
         }
 
     }
