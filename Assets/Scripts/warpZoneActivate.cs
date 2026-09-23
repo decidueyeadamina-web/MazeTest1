@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class warpZoneActivate : MonoBehaviour
 {   
@@ -18,7 +20,7 @@ public class warpZoneActivate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SC .warpSpot == true)
+        if (SC.warpSpot == true)
         {
             Debug.Log("warping true");
             teleportZone.SetActive(true);
