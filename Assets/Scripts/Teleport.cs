@@ -22,12 +22,21 @@ public class Teleport : MonoBehaviour
     //audio setup
     public AudioClip warpSFX;
     public AudioSource sourceAudio;
+
+    //cast UI
+
+    public GameObject openedBookUI;
+    public GameObject closedBookUI;
+
     void Start()
     {
         canWarp = false;
         justWarped = false;
         warpVFX.SetActive(false);
         teleportedVFX.SetActive(false);
+
+        openedBookUI.SetActive(false);
+        closedBookUI.SetActive(true);
 
     }
 
@@ -41,6 +50,9 @@ public class Teleport : MonoBehaviour
             canWarp = true;
             //Debug.Log("hello??");
             MoveHere();
+
+            openedBookUI.SetActive(true);
+            closedBookUI.SetActive(false);
         }
 
         if (canWarp == true)
@@ -71,11 +83,16 @@ public class Teleport : MonoBehaviour
             justWarped = false;
             warpVFX.SetActive(false);
             teleportedVFX.SetActive(false);
+
         }
 
         if (Timer == 0.0f && canWarp == false && justWarped == false)
         {
             Timer = 1f;
+            
+            // teleport UI
+            openedBookUI.SetActive(false);
+            closedBookUI.SetActive(true);
         }
     }
 

@@ -62,6 +62,14 @@ public class ItemPickup : MonoBehaviour
     public bool hasOpenedDoor3;
     public bool hasOpenedDoor4;
 
+    //item slot go's
+    public GameObject Key1Slot;
+    public GameObject Key2Slot;
+    public GameObject Key3Slot;
+    public GameObject Key4Slot;
+    public GameObject Key5Slot;
+    public GameObject Key6Slot;
+
     // bc u will forget: keys 1-3 open the win condition door at the start
     //keys 1-3 are their own deal
 
@@ -77,7 +85,7 @@ public class ItemPickup : MonoBehaviour
         Key5UI.SetActive(false);
         Key6UI.SetActive(false);
 
-        //player has no keys (bool
+        //player has no keys (bool)
         Key1Collected = false;
         Key2Collected = false;
         Key3Collected = false;
@@ -85,6 +93,13 @@ public class ItemPickup : MonoBehaviour
         Key5Collected = false;
         Key6Collected = false;
 
+        //itemSlotTaken
+        Key1Slot.SetActive(true);
+        Key2Slot.SetActive(true);
+        Key3Slot.SetActive(true);
+        Key4Slot.SetActive(true);
+        Key5Slot.SetActive(true);
+        Key6Slot.SetActive(true);
     }
 
     // Update is called once per frame
@@ -98,6 +113,8 @@ public class ItemPickup : MonoBehaviour
         {
             ItemGrab1();
             Key1Collected = true;
+            Key1Slot.SetActive(false);
+            
         }
 
         //Grab Key2
@@ -107,6 +124,7 @@ public class ItemPickup : MonoBehaviour
         {
             ItemGrab2();
             Key2Collected = true;
+            Key2Slot.SetActive(false);
         }
 
         //Grab Key3
@@ -116,6 +134,7 @@ public class ItemPickup : MonoBehaviour
         {
             ItemGrab3();
             Key3Collected = true;
+            Key3Slot.SetActive(false);
         }
 
         //Grab Key4
@@ -125,6 +144,7 @@ public class ItemPickup : MonoBehaviour
         {
             ItemGrab4();
             Key4Collected = true;
+            Key4Slot.SetActive(false);
         }
 
         //Grab Key5
@@ -134,6 +154,7 @@ public class ItemPickup : MonoBehaviour
         {
             ItemGrab5();
             Key5Collected = true;
+            Key5Slot.SetActive(false);
         }
 
         //Grab Key6
@@ -143,6 +164,7 @@ public class ItemPickup : MonoBehaviour
         {
             ItemGrab6();
             Key6Collected = true;
+            Key6Slot.SetActive(false);
         }
 
         //door checks, use numbers for distance
