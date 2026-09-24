@@ -21,6 +21,7 @@ public class Teleport : MonoBehaviour
     void Start()
     {
         canWarp = false;
+        justWarped = false;
         warpVFX.SetActive(false);
         teleportedVFX.SetActive(false);
 
@@ -61,6 +62,16 @@ public class Teleport : MonoBehaviour
         if (Timer <= 0.0f)
         {
             Timer = 0.0f;
+
+            canWarp = false;
+            justWarped = false;
+            warpVFX.SetActive(false);
+            teleportedVFX.SetActive(false);
+        }
+
+        if (Timer == 0.0f && canWarp == false && justWarped == false)
+        {
+            Timer = 1f;
         }
     }
 

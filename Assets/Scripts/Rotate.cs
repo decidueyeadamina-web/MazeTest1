@@ -6,7 +6,7 @@ public class Rotate : MonoBehaviour
     //hi this script is taken from what I've learned in my last coding class (how to rotate things automatically) but altered to mess with turn speed
     //i didn't use AI i know what all of these things mean at a basic level
 
-    public float turnSpeed = 5;
+    public float turnSpeed = 5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

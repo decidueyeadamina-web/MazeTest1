@@ -40827,6 +40827,8 @@ MonoBehaviour:
   Teleport3: {fileID: 1605534559}
   Teleport4: {fileID: 376813352}
   Teleport5: {fileID: 245208936}
+  Teleport5_4: {fileID: 763386662}
+  Teleport4_2: {fileID: 2077337753}
   canTeleport: 5
   warpSpot: 0
 --- !u!212 &1394686319

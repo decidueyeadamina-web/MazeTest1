@@ -16,6 +16,8 @@ public class spriteController : MonoBehaviour
     public Transform Teleport3;
     public Transform Teleport4;
     public Transform Teleport5;
+    public Transform Teleport5_4;
+    public Transform Teleport4_2;
 
     // floats for sense distance
 
@@ -91,6 +93,20 @@ public class spriteController : MonoBehaviour
         float distance5A = Vector3.Distance(Player.position, Teleport5.position);
 
         if (distance5A <= canTeleport)
+        {
+            spriteRenderer.sprite = castableSprite; 
+            warpSpot = true;
+        }
+
+        float distance6A = Vector3.Distance(Player.position, Teleport5_4.position);
+         if (distance6A <= canTeleport)
+        {
+            spriteRenderer.sprite = castableSprite; 
+            warpSpot = true;
+        }
+
+        float distance7A = Vector3.Distance(Player.position, Teleport4_2.position);
+         if (distance7A <= canTeleport)
         {
             spriteRenderer.sprite = castableSprite; 
             warpSpot = true;
