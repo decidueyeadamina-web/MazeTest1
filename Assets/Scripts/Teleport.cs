@@ -18,6 +18,10 @@ public class Teleport : MonoBehaviour
     //fist time setting up a timer yikes
 
     public float Timer = 1f;
+
+    //audio setup
+    public AudioClip warpSFX;
+    public AudioSource sourceAudio;
     void Start()
     {
         canWarp = false;
@@ -79,12 +83,16 @@ public class Teleport : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E))
         {
-            Debug.Log("put words here!");
+            //Debug.Log("warpcheck");
             player.position = teleportB.position;
 
             teleportedVFX.SetActive(true);
             justWarped = true;
             Timer -= Time.deltaTime;
+
+            //play audio
+            sourceAudio = GetComponent<AudioSource>();
+            sourceAudio.PlayOneShot(warpSFX);
         }
     }
 }

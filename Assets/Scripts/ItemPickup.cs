@@ -52,6 +52,16 @@ public class ItemPickup : MonoBehaviour
     public GameObject Room5Door;
     public GameObject ExitCastleDoor;
 
+    //sound controller
+
+    public AudioClip keyPickUpSFX;
+    public AudioSource sourceAudio;
+
+    public bool hasOpenedDoor1;
+    public bool hasOpenedDoor2;
+    public bool hasOpenedDoor3;
+    public bool hasOpenedDoor4;
+
     // bc u will forget: keys 1-3 open the win condition door at the start
     //keys 1-3 are their own deal
 
@@ -74,6 +84,7 @@ public class ItemPickup : MonoBehaviour
         Key4Collected = false;
         Key5Collected = false;
         Key6Collected = false;
+
     }
 
     // Update is called once per frame
@@ -139,7 +150,7 @@ public class ItemPickup : MonoBehaviour
         //main door
         float distance1 = Vector3.Distance(Player.position, FinalDoor4.position);
         
-        if (Key1Collected == true && Key2Collected == true && Key3Collected == true && distance1 <= closeEnoughDoor)
+        if (Key1Collected == true && Key2Collected == true && Key3Collected == true && distance1 <= closeEnoughDoor && hasOpenedDoor4 == false)
         {
             ExitCastleDoor.SetActive(false);
         }
@@ -147,7 +158,7 @@ public class ItemPickup : MonoBehaviour
         //door 1 in room 3
         float distance2 = Vector3.Distance(Player.position, CastleDoor1.position);
         
-        if (Key4Collected == true && distance2 <= closeEnoughDoor)
+        if (Key4Collected == true && distance2 <= closeEnoughDoor && hasOpenedDoor1 == false)
         {
             Room3Door.SetActive(false);
         }
@@ -155,7 +166,7 @@ public class ItemPickup : MonoBehaviour
         //door 2 in room 4
         float distance3 = Vector3.Distance(Player.position, CastleDoor2.position);
         
-        if (Key5Collected == true && distance3 <= closeEnoughDoor)
+        if (Key5Collected == true && distance3 <= closeEnoughDoor && hasOpenedDoor2 == false)
         {
             Room4Door.SetActive(false);
         }
@@ -163,7 +174,7 @@ public class ItemPickup : MonoBehaviour
         //door 3 in room 5
         float distance4 = Vector3.Distance(Player.position, CastleDoor3.position);
         
-        if (Key6Collected == true && distance4 <= closeEnoughDoor)
+        if (Key6Collected == true && distance4 <= closeEnoughDoor && hasOpenedDoor3 == false)
         {
             Room5Door.SetActive(false);
         }
@@ -174,36 +185,53 @@ public class ItemPickup : MonoBehaviour
     {
         DoorKey1.SetActive(false);
         Key1UI.SetActive(true);
-
+        //play audio
+        sourceAudio = GetComponent<AudioSource>();
+        sourceAudio.PlayOneShot(keyPickUpSFX);
     }
     void ItemGrab2()
     {
         DoorKey2.SetActive(false);
         Key2UI.SetActive(true);
+        //play audio
+        sourceAudio = GetComponent<AudioSource>();
+        sourceAudio.PlayOneShot(keyPickUpSFX);
 
     }
     void ItemGrab3()
     {
         DoorKey3.SetActive(false);
         Key3UI.SetActive(true);
+        //play audio
+        sourceAudio = GetComponent<AudioSource>();
+        sourceAudio.PlayOneShot(keyPickUpSFX);
 
     }
     void ItemGrab4()
     {
         DoorKey4.SetActive(false);
         Key4UI.SetActive(true);
+        //play audio
+        sourceAudio = GetComponent<AudioSource>();
+        sourceAudio.PlayOneShot(keyPickUpSFX);
 
     }
     void ItemGrab5()
     {
         DoorKey5.SetActive(false);
         Key5UI.SetActive(true);
+        //play audio
+        sourceAudio = GetComponent<AudioSource>();
+        sourceAudio.PlayOneShot(keyPickUpSFX);
 
     }
     void ItemGrab6()
     {
         DoorKey6.SetActive(false);
         Key6UI.SetActive(true);
+        //play audio
+        sourceAudio = GetComponent<AudioSource>();
+        sourceAudio.PlayOneShot(keyPickUpSFX);
 
     }
 }
